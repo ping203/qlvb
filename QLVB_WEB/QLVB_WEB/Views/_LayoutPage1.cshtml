@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <ext:Panel ID="Panel1" Border="false" runat="server" Layout="fit" Height="600" MonitorResize="true">
+        <Items>
+            <ext:Panel ID="panelPHADetails" runat="server" Frame="false" Border="false">
+                <Items>
+                    <ext:Panel ID="Panel2" runat="server" Border="false" LabelWidth="125" Layout="Form">
+                        <Items>
+                            <ext:Label ID="lblPHANumber" runat="server" FieldLabel="Number" Text="New" AnchorHorizontal="50%" />
+                            <ext:Container ID="Container1" runat="server" Layout="Column" AutoHeight="true">
+                                <LayoutConfig>
+                                    <ext:ColumnLayoutConfig FitHeight="false" />
+                                </LayoutConfig>
+                                <Items>
+                                    <ext:Container ID="Container12" runat="server" LabelAlign="Left" Layout="Form" LabelWidth="125" ColumnWidth=".5">
+                                        <Items>
+                                            <ext:TextField ID="TextboxPHAName" runat="server" FieldLabel="Name" MaxLength="60" AllowBlank="false" AnchorHorizontal="95%" />
+                                            <ext:Label ID="LblRevalidation" runat="server" Visible="false" />
+                                            <ext:TextField ID="TextRevalidation" runat="server" Visible="false" Width="90px" />
+                                        </Items>
+                                    </ext:Container>
+                                    <ext:Container ID="Container13" runat="server" LabelAlign="Left" LabelWidth="125" Layout="Form" ColumnWidth=".5">
+                                        <Items>
+                                            <ext:TextField ID="TextboxPHAPrefix" runat="server" FieldLabel="Prefix" Width="60" MaxLength="8" AnchorHorizontal="50%" />
+                                        </Items>
+                                    </ext:Container>
+                                </Items>
+                            </ext:Container>
+                            <ext:Container ID="Container2" runat="server" Layout="Column" AutoHeight="true">
+                                <Items>
+                                    <ext:Container ID="Container21" runat="server" LabelAlign="Left" LabelWidth="125" Layout="Form" ColumnWidth=".8">
+                                        <Items>
+                                            <ext:TextArea ID="TextboxScope" runat="server" FieldLabel="Scope" MaxLength="32766" AnchorHorizontal="100%" />
+                                        </Items>
+                                    </ext:Container>
+                                    <ext:Container ID="Container22" runat="server" LabelAlign="Left" LabelWidth="125" Layout="Form" ColumnWidth=".2">
+                                        <Items>
+                                            <ext:Button runat="server" Text="Spell Check"></ext:Button>
+                                        </Items>
+                                    </ext:Container>
+                                </Items>
+                            </ext:Container>
+                        </Items>
+                    </ext:Panel>
+                </Items>
+            </ext:Panel>
+        </Items>
+    </ext:Panel>
+</body>
+</html>

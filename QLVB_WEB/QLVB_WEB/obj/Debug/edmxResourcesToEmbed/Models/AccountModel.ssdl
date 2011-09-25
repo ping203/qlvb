@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLVBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="QLVBModelStoreContainer">
+    <EntitySet Name="DMNHANVIEN" EntityType="QLVBModel.Store.DMNHANVIEN" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="DMNHANVIEN">
+    <Key>
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Name="MANV" Type="nvarchar" Nullable="false" MaxLength="6" />
+    <Property Name="TEN" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="128" />
+    <Property Name="TRANGTHAI" Type="int" Nullable="false" />
+    <Property Name="NICKSKYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="NICKYAHOO" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="MOBILE" Type="nvarchar" MaxLength="20" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
+    <Property Name="CHUCVU" Type="nvarchar" MaxLength="50" />
+    <Property Name="OFFICEPHONE" Type="nvarchar" MaxLength="20" />
+    <Property Name="CAPBAC" Type="nvarchar" MaxLength="50" />
+    <Property Name="CHUCNANG" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+</Schema>

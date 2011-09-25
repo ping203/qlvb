@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLVBModelStoreContainer" CdmEntityContainer="QLVBEntities">
+    <EntitySetMapping Name="DMNHANVIENs">
+      <EntityTypeMapping TypeName="QLVBModel.DMNHANVIEN">
+        <MappingFragment StoreEntitySet="DMNHANVIEN">
+          <ScalarProperty Name="MANV" ColumnName="MANV" />
+          <ScalarProperty Name="TEN" ColumnName="TEN" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+          <ScalarProperty Name="NICKSKYPE" ColumnName="NICKSKYPE" />
+          <ScalarProperty Name="NICKYAHOO" ColumnName="NICKYAHOO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="CHUCVU" ColumnName="CHUCVU" />
+          <ScalarProperty Name="OFFICEPHONE" ColumnName="OFFICEPHONE" />
+          <ScalarProperty Name="CAPBAC" ColumnName="CAPBAC" />
+          <ScalarProperty Name="CHUCNANG" ColumnName="CHUCNANG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

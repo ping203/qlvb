@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Problems>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\PROJECTS\QLVB\DATABASE\DATABASE\SCHEMA OBJECTS\SCHEMAS\DBO\PROGRAMMABILITY\STORED PROCEDURES\GETDSNOINHANVANBANDI.PROC.SQL</SourceFile>
+    <Line>20</Line>
+    <Column>59</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0009</Rule>
+    <ProblemDescription>Avoid NVARCHAR of only 2 elements.</ProblemDescription>
+    <SourceFile>E:\PROJECTS\QLVB\DATABASE\DATABASE\SCHEMA OBJECTS\SCHEMAS\DBO\TABLES\DI_NOINHAN.TABLE.SQL</SourceFile>
+    <Line>7</Line>
+    <Column>20</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0009</Rule>
+    <ProblemDescription>Avoid NVARCHAR of only 2 elements.</ProblemDescription>
+    <SourceFile>E:\PROJECTS\QLVB\DATABASE\DATABASE\SCHEMA OBJECTS\SCHEMAS\DBO\TABLES\DMPHONGBAN.TABLE.SQL</SourceFile>
+    <Line>2</Line>
+    <Column>17</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+</Problems>

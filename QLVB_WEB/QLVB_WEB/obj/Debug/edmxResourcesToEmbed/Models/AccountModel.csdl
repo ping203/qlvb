@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLVBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="QLVBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DMNHANVIENs" EntityType="QLVBModel.DMNHANVIEN" />
+  </EntityContainer>
+  <EntityType Name="DMNHANVIEN">
+    <Key>
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Name="MANV" Type="String" Nullable="false" MaxLength="6" Unicode="true" FixedLength="false" />
+    <Property Name="TEN" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="TRANGTHAI" Type="Int32" Nullable="false" />
+    <Property Name="NICKSKYPE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NICKYAHOO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MOBILE" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CHUCVU" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="OFFICEPHONE" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="CAPBAC" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CHUCNANG" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

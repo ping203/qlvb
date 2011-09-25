@@ -1,0 +1,665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QLVBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="QLVBModelStoreContainer">
+          <EntitySet Name="DEN_DINHKEM" EntityType="QLVBModel.Store.DEN_DINHKEM" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DEN_DOITUONGNHANVIEC" EntityType="QLVBModel.Store.DEN_DOITUONGNHANVIEC" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DEN_VANBAN" EntityType="QLVBModel.Store.DEN_VANBAN" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DEN_XULYVB" EntityType="QLVBModel.Store.DEN_XULYVB" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DMCHUCNANG" EntityType="QLVBModel.Store.DMCHUCNANG" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DMCHUCVU" EntityType="QLVBModel.Store.DMCHUCVU" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DMCOQUAN" EntityType="QLVBModel.Store.DMCOQUAN" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DMLOAIVB" EntityType="QLVBModel.Store.DMLOAIVB" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DMNHANVIEN" EntityType="QLVBModel.Store.DMNHANVIEN" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DMPHONGBAN" EntityType="QLVBModel.Store.DMPHONGBAN" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DMSOVB" EntityType="QLVBModel.Store.DMSOVB" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="THAMSO" EntityType="QLVBModel.Store.THAMSO" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_DEN_DINHKEM_DEN_VANBAN" Association="QLVBModel.Store.FK_DEN_DINHKEM_DEN_VANBAN">
+            <End Role="DEN_VANBAN" EntitySet="DEN_VANBAN" />
+            <End Role="DEN_DINHKEM" EntitySet="DEN_DINHKEM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DEN_DOITUONGNHANVIEC_DEN_XULYVB" Association="QLVBModel.Store.FK_DEN_DOITUONGNHANVIEC_DEN_XULYVB">
+            <End Role="DEN_XULYVB" EntitySet="DEN_XULYVB" />
+            <End Role="DEN_DOITUONGNHANVIEC" EntitySet="DEN_DOITUONGNHANVIEC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DEN_XULYVB_DEN_VANBAN" Association="QLVBModel.Store.FK_DEN_XULYVB_DEN_VANBAN">
+            <End Role="DEN_VANBAN" EntitySet="DEN_VANBAN" />
+            <End Role="DEN_XULYVB" EntitySet="DEN_XULYVB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DMCHUCVU_DMCHUCNANG" Association="QLVBModel.Store.FK_DMCHUCVU_DMCHUCNANG">
+            <End Role="DMCHUCNANG" EntitySet="DMCHUCNANG" />
+            <End Role="DMCHUCVU" EntitySet="DMCHUCVU" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DEN_DINHKEM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDVB" Type="int" Nullable="false" />
+          <Property Name="FILENAME" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="DATA" Type="varbinary(max)" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDFILETRANSFER" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DEN_DOITUONGNHANVIEC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="IDXULY" Type="int" Nullable="false" />
+          <Property Name="IDNGUOINHANVIEC" Type="nvarchar" Nullable="false" MaxLength="8" />
+          <Property Name="TRACHNHIEM" Type="int" Nullable="false" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="50" />
+          <Property Name="THOIGIAN" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DEN_VANBAN">
+          <Key>
+            <PropertyRef Name="IDVB" />
+          </Key>
+          <Property Name="IDVB" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NOIGUI" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TENSOVB" Type="nvarchar" MaxLength="50" />
+          <Property Name="SODEN" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="NGAYDEN" Type="datetime" Nullable="false" />
+          <Property Name="KYHIEU" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NGAYVANBAN" Type="date" />
+          <Property Name="LOAIVANBAN" Type="nvarchar" MaxLength="50" />
+          <Property Name="TRICHYEU" Type="nvarchar(max)" />
+          <Property Name="MAHOSO" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DOMAT" Type="int" Nullable="false" />
+          <Property Name="DOKHAN" Type="int" Nullable="false" />
+          <Property Name="SOTO" Type="int" Nullable="false" />
+          <Property Name="THOIHAN" Type="datetime" />
+          <Property Name="NGUOIKY" Type="nvarchar" MaxLength="50" />
+          <Property Name="CHUCVUNGUOIKY" Type="nvarchar" MaxLength="50" />
+          <Property Name="CANXULY" Type="int" Nullable="false" />
+          <Property Name="IDVBTRANSFER" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDNGUOINHAP" Type="nvarchar" MaxLength="8" />
+          <Property Name="RECVSTATUS" Type="int" />
+          <Property Name="IDXEM" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="DEN_XULYVB">
+          <Key>
+            <PropertyRef Name="IDXULY" />
+          </Key>
+          <Property Name="IDXULY" Type="int" Nullable="false" />
+          <Property Name="IDVB" Type="int" Nullable="false" />
+          <Property Name="IDNGUOIXL" Type="nvarchar" Nullable="false" MaxLength="8" />
+          <Property Name="CACHTHUC" Type="int" Nullable="false" />
+          <Property Name="NOIDUNG" Type="nvarchar(max)" />
+          <Property Name="THOIGIAN" Type="datetime" Nullable="false" />
+          <Property Name="THOIHAN" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DMCHUCNANG">
+          <Key>
+            <PropertyRef Name="MACHUCNANG" />
+          </Key>
+          <Property Name="MACHUCNANG" Type="nvarchar" Nullable="false" MaxLength="2" />
+          <Property Name="TENCHUCNANG" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DMCHUCVU">
+          <Key>
+            <PropertyRef Name="MACHUCVU" />
+          </Key>
+          <Property Name="MACHUCVU" Type="nvarchar" Nullable="false" MaxLength="2" />
+          <Property Name="TENCHUCVU" Type="nvarchar" MaxLength="50" />
+          <Property Name="MACHUCNANG" Type="nvarchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="DMCOQUAN">
+          <Key>
+            <PropertyRef Name="MACOQUAN" />
+          </Key>
+          <Property Name="MACOQUAN" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TENCOQUAN" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="GHICHU" Type="text" />
+          <Property Name="WEBSERVICEURL" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="DMLOAIVB">
+          <Key>
+            <PropertyRef Name="IDLOAIVB" />
+          </Key>
+          <Property Name="IDLOAIVB" Type="int" Nullable="false" />
+          <Property Name="LOAIVB" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DMNHANVIEN">
+          <Key>
+            <PropertyRef Name="MANV" />
+          </Key>
+          <Property Name="MANV" Type="nvarchar" Nullable="false" MaxLength="8" />
+          <Property Name="TEN" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="128" />
+          <Property Name="TRANGTHAI" Type="int" Nullable="false" />
+          <Property Name="NICKSKYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="NICKYAHOO" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="MOBILE" Type="nvarchar" MaxLength="20" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="200" />
+          <Property Name="CHUCVU" Type="nvarchar" MaxLength="50" />
+          <Property Name="OFFICEPHONE" Type="nvarchar" MaxLength="20" />
+          <Property Name="ADMIN" Type="int" />
+          <Property Name="MAPHONG" Type="nvarchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="DMPHONGBAN">
+          <Key>
+            <PropertyRef Name="MAPHONG" />
+          </Key>
+          <Property Name="MAPHONG" Type="nvarchar" Nullable="false" MaxLength="2" />
+          <Property Name="IDUYQUYEN" Type="nvarchar" MaxLength="6" />
+          <Property Name="TENPHONG" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DMSOVB">
+          <Key>
+            <PropertyRef Name="IDSOVB" />
+          </Key>
+          <Property Name="IDSOVB" Type="int" Nullable="false" />
+          <Property Name="TENSOVB" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="THAMSO">
+          <Key>
+            <PropertyRef Name="NAME" />
+          </Key>
+          <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="VALUE" Type="nvarchar" Nullable="false" MaxLength="1000" />
+        </EntityType>
+        <Association Name="FK_DEN_DINHKEM_DEN_VANBAN">
+          <End Role="DEN_VANBAN" Type="QLVBModel.Store.DEN_VANBAN" Multiplicity="1" />
+          <End Role="DEN_DINHKEM" Type="QLVBModel.Store.DEN_DINHKEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEN_VANBAN">
+              <PropertyRef Name="IDVB" />
+            </Principal>
+            <Dependent Role="DEN_DINHKEM">
+              <PropertyRef Name="IDVB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DEN_DOITUONGNHANVIEC_DEN_XULYVB">
+          <End Role="DEN_XULYVB" Type="QLVBModel.Store.DEN_XULYVB" Multiplicity="1" />
+          <End Role="DEN_DOITUONGNHANVIEC" Type="QLVBModel.Store.DEN_DOITUONGNHANVIEC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEN_XULYVB">
+              <PropertyRef Name="IDXULY" />
+            </Principal>
+            <Dependent Role="DEN_DOITUONGNHANVIEC">
+              <PropertyRef Name="IDXULY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DEN_XULYVB_DEN_VANBAN">
+          <End Role="DEN_VANBAN" Type="QLVBModel.Store.DEN_VANBAN" Multiplicity="1" />
+          <End Role="DEN_XULYVB" Type="QLVBModel.Store.DEN_XULYVB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEN_VANBAN">
+              <PropertyRef Name="IDVB" />
+            </Principal>
+            <Dependent Role="DEN_XULYVB">
+              <PropertyRef Name="IDVB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DMCHUCVU_DMCHUCNANG">
+          <End Role="DMCHUCNANG" Type="QLVBModel.Store.DMCHUCNANG" Multiplicity="0..1" />
+          <End Role="DMCHUCVU" Type="QLVBModel.Store.DMCHUCVU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DMCHUCNANG">
+              <PropertyRef Name="MACHUCNANG" />
+            </Principal>
+            <Dependent Role="DMCHUCVU">
+              <PropertyRef Name="MACHUCNANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GetCurSeqVal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SeqName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="GetNewSeqVal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SeqName" Type="nvarchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QLVBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="QLVBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DMCHUCNANGs" EntityType="QLVBModel.DMCHUCNANG" />
+          <EntitySet Name="DMCOQUANs" EntityType="QLVBModel.DMCOQUAN" />
+          <EntitySet Name="DMPHONGBANs" EntityType="QLVBModel.DMPHONGBAN" />
+          <EntitySet Name="THAMSOes" EntityType="QLVBModel.THAMSO" />
+          <FunctionImport Name="GetNewSeqVal" ReturnType="Collection(Int32)">
+          <Parameter Name="SeqName" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="DMNHANVIENs" EntityType="QLVBModel.DMNHANVIEN" />
+          <AssociationSet Name="FK_DMNHANVIEN_DMPHONGBAN" Association="QLVBModel.FK_DMNHANVIEN_DMPHONGBAN">
+            <End Role="DMPHONGBAN" EntitySet="DMPHONGBANs" />
+            <End Role="DMNHANVIEN" EntitySet="DMNHANVIENs" />
+          </AssociationSet>
+          <EntitySet Name="DMCHUCVUs" EntityType="QLVBModel.DMCHUCVU" />
+          <AssociationSet Name="FK_DMCHUCVU_DMCHUCNANG" Association="QLVBModel.FK_DMCHUCVU_DMCHUCNANG">
+            <End Role="DMCHUCNANG" EntitySet="DMCHUCNANGs" />
+            <End Role="DMCHUCVU" EntitySet="DMCHUCVUs" />
+          </AssociationSet>
+          <EntitySet Name="DMLOAIVBs" EntityType="QLVBModel.DMLOAIVB" />
+          <EntitySet Name="DMSOVBs" EntityType="QLVBModel.DMSOVB" />
+          <EntitySet Name="DEN_DINHKEM" EntityType="QLVBModel.DEN_DINHKEM" />
+          <EntitySet Name="DEN_DOITUONGNHANVIEC" EntityType="QLVBModel.DEN_DOITUONGNHANVIEC" />
+          <EntitySet Name="DEN_VANBAN" EntityType="QLVBModel.DEN_VANBAN" />
+          <EntitySet Name="DEN_XULYVB" EntityType="QLVBModel.DEN_XULYVB" />
+          <AssociationSet Name="FK_DEN_DINHKEM_DEN_VANBAN" Association="QLVBModel.FK_DEN_DINHKEM_DEN_VANBAN">
+            <End Role="DEN_VANBAN" EntitySet="DEN_VANBAN" />
+            <End Role="DEN_DINHKEM" EntitySet="DEN_DINHKEM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DEN_DOITUONGNHANVIEC_DEN_XULYVB" Association="QLVBModel.FK_DEN_DOITUONGNHANVIEC_DEN_XULYVB">
+            <End Role="DEN_XULYVB" EntitySet="DEN_XULYVB" />
+            <End Role="DEN_DOITUONGNHANVIEC" EntitySet="DEN_DOITUONGNHANVIEC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DEN_XULYVB_DEN_VANBAN" Association="QLVBModel.FK_DEN_XULYVB_DEN_VANBAN">
+            <End Role="DEN_VANBAN" EntitySet="DEN_VANBAN" />
+            <End Role="DEN_XULYVB" EntitySet="DEN_XULYVB" />
+          </AssociationSet>
+          <FunctionImport Name="GetCurSeqVal" ReturnType="Collection(Int32)">
+            <Parameter Name="SeqName" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="DMCHUCNANG">
+          <Key>
+            <PropertyRef Name="MACHUCNANG" />
+          </Key>
+          <Property Name="MACHUCNANG" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="TENCHUCNANG" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="DMCHUCVUs" Relationship="QLVBModel.FK_DMCHUCVU_DMCHUCNANG" FromRole="DMCHUCNANG" ToRole="DMCHUCVU" />
+        </EntityType>
+        <EntityType Name="DMCOQUAN">
+          <Key>
+            <PropertyRef Name="MACOQUAN" />
+          </Key>
+          <Property Name="MACOQUAN" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TENCOQUAN" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="GHICHU" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="WEBSERVICEURL" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DMPHONGBAN">
+          <Key>
+            <PropertyRef Name="MAPHONG" />
+          </Key>
+          <Property Name="MAPHONG" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="IDUYQUYEN" Type="String" MaxLength="6" Unicode="true" FixedLength="false" />
+          <Property Name="TENPHONG" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="DMNHANVIENs" Relationship="QLVBModel.FK_DMNHANVIEN_DMPHONGBAN" FromRole="DMPHONGBAN" ToRole="DMNHANVIEN" />
+        </EntityType>
+        <EntityType Name="THAMSO">
+          <Key>
+            <PropertyRef Name="NAME" />
+          </Key>
+          <Property Name="NAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="VALUE" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DMNHANVIEN">
+          <Key>
+            <PropertyRef Name="MANV" />
+          </Key>
+          <Property Type="String" Name="MANV" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="USERNAME" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PASSWORD" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TRANGTHAI" Nullable="false" />
+          <Property Type="String" Name="NICKSKYPE" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NICKYAHOO" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EMAIL" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MOBILE" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DIACHI" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CHUCVU" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OFFICEPHONE" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ADMIN" />
+          <Property Type="String" Name="MAPHONG" MaxLength="2" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DMPHONGBAN" Relationship="QLVBModel.FK_DMNHANVIEN_DMPHONGBAN" FromRole="DMNHANVIEN" ToRole="DMPHONGBAN" />
+        </EntityType>
+        <Association Name="FK_DMNHANVIEN_DMPHONGBAN">
+          <End Type="QLVBModel.DMPHONGBAN" Role="DMPHONGBAN" Multiplicity="0..1" />
+          <End Type="QLVBModel.DMNHANVIEN" Role="DMNHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DMPHONGBAN">
+              <PropertyRef Name="MAPHONG" />
+            </Principal>
+            <Dependent Role="DMNHANVIEN">
+              <PropertyRef Name="MAPHONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DMCHUCVU">
+          <Key>
+            <PropertyRef Name="MACHUCVU" />
+          </Key>
+          <Property Type="String" Name="MACHUCVU" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TENCHUCVU" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MACHUCNANG" MaxLength="2" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DMCHUCNANG" Relationship="QLVBModel.FK_DMCHUCVU_DMCHUCNANG" FromRole="DMCHUCVU" ToRole="DMCHUCNANG" />
+        </EntityType>
+        <Association Name="FK_DMCHUCVU_DMCHUCNANG">
+          <End Type="QLVBModel.DMCHUCNANG" Role="DMCHUCNANG" Multiplicity="0..1" />
+          <End Type="QLVBModel.DMCHUCVU" Role="DMCHUCVU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DMCHUCNANG">
+              <PropertyRef Name="MACHUCNANG" />
+            </Principal>
+            <Dependent Role="DMCHUCVU">
+              <PropertyRef Name="MACHUCNANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DMLOAIVB">
+          <Key>
+            <PropertyRef Name="IDLOAIVB" />
+          </Key>
+          <Property Type="Int32" Name="IDLOAIVB" Nullable="false" />
+          <Property Type="String" Name="LOAIVB" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DMSOVB">
+          <Key>
+            <PropertyRef Name="IDSOVB" />
+          </Key>
+          <Property Type="Int32" Name="IDSOVB" Nullable="false" />
+          <Property Type="String" Name="TENSOVB" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DEN_DINHKEM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IDVB" Nullable="false" />
+          <Property Type="String" Name="FILENAME" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="DATA" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="GHICHU" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IDFILETRANSFER" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DEN_VANBAN" Relationship="QLVBModel.FK_DEN_DINHKEM_DEN_VANBAN" FromRole="DEN_DINHKEM" ToRole="DEN_VANBAN" />
+        </EntityType>
+        <EntityType Name="DEN_DOITUONGNHANVIEC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="IDXULY" Nullable="false" />
+          <Property Type="String" Name="IDNGUOINHANVIEC" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TRACHNHIEM" Nullable="false" />
+          <Property Type="String" Name="GHICHU" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="THOIGIAN" Nullable="false" />
+          <NavigationProperty Name="DEN_XULYVB" Relationship="QLVBModel.FK_DEN_DOITUONGNHANVIEC_DEN_XULYVB" FromRole="DEN_DOITUONGNHANVIEC" ToRole="DEN_XULYVB" />
+        </EntityType>
+        <EntityType Name="DEN_VANBAN">
+          <Key>
+            <PropertyRef Name="IDVB" />
+          </Key>
+          <Property Type="Int32" Name="IDVB" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="NOIGUI" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TENSOVB" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SODEN" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="NGAYDEN" Nullable="false" />
+          <Property Type="String" Name="KYHIEU" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="NGAYVANBAN" />
+          <Property Type="String" Name="LOAIVANBAN" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TRICHYEU" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MAHOSO" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DOMAT" Nullable="false" />
+          <Property Type="Int32" Name="DOKHAN" Nullable="false" />
+          <Property Type="Int32" Name="SOTO" Nullable="false" />
+          <Property Type="DateTime" Name="THOIHAN" />
+          <Property Type="String" Name="NGUOIKY" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CHUCVUNGUOIKY" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CANXULY" Nullable="false" />
+          <Property Type="String" Name="IDVBTRANSFER" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IDNGUOINHAP" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="RECVSTATUS" />
+          <Property Type="String" Name="IDXEM" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DEN_DINHKEM" Relationship="QLVBModel.FK_DEN_DINHKEM_DEN_VANBAN" FromRole="DEN_VANBAN" ToRole="DEN_DINHKEM" />
+          <NavigationProperty Name="DEN_XULYVB" Relationship="QLVBModel.FK_DEN_XULYVB_DEN_VANBAN" FromRole="DEN_VANBAN" ToRole="DEN_XULYVB" />
+        </EntityType>
+        <EntityType Name="DEN_XULYVB">
+          <Key>
+            <PropertyRef Name="IDXULY" />
+          </Key>
+          <Property Type="Int32" Name="IDXULY" Nullable="false" />
+          <Property Type="Int32" Name="IDVB" Nullable="false" />
+          <Property Type="String" Name="IDNGUOIXL" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CACHTHUC" Nullable="false" />
+          <Property Type="String" Name="NOIDUNG" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="THOIGIAN" Nullable="false" />
+          <Property Type="DateTime" Name="THOIHAN" />
+          <NavigationProperty Name="DEN_DOITUONGNHANVIEC" Relationship="QLVBModel.FK_DEN_DOITUONGNHANVIEC_DEN_XULYVB" FromRole="DEN_XULYVB" ToRole="DEN_DOITUONGNHANVIEC" />
+          <NavigationProperty Name="DEN_VANBAN" Relationship="QLVBModel.FK_DEN_XULYVB_DEN_VANBAN" FromRole="DEN_XULYVB" ToRole="DEN_VANBAN" />
+        </EntityType>
+        <Association Name="FK_DEN_DINHKEM_DEN_VANBAN">
+          <End Type="QLVBModel.DEN_VANBAN" Role="DEN_VANBAN" Multiplicity="1" />
+          <End Type="QLVBModel.DEN_DINHKEM" Role="DEN_DINHKEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEN_VANBAN">
+              <PropertyRef Name="IDVB" />
+            </Principal>
+            <Dependent Role="DEN_DINHKEM">
+              <PropertyRef Name="IDVB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DEN_DOITUONGNHANVIEC_DEN_XULYVB">
+          <End Type="QLVBModel.DEN_XULYVB" Role="DEN_XULYVB" Multiplicity="1" />
+          <End Type="QLVBModel.DEN_DOITUONGNHANVIEC" Role="DEN_DOITUONGNHANVIEC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEN_XULYVB">
+              <PropertyRef Name="IDXULY" />
+            </Principal>
+            <Dependent Role="DEN_DOITUONGNHANVIEC">
+              <PropertyRef Name="IDXULY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DEN_XULYVB_DEN_VANBAN">
+          <End Type="QLVBModel.DEN_VANBAN" Role="DEN_VANBAN" Multiplicity="1" />
+          <End Type="QLVBModel.DEN_XULYVB" Role="DEN_XULYVB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEN_VANBAN">
+              <PropertyRef Name="IDVB" />
+            </Principal>
+            <Dependent Role="DEN_XULYVB">
+              <PropertyRef Name="IDVB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QLVBModelStoreContainer" CdmEntityContainer="QLVBEntities">
+          <EntitySetMapping Name="DMCHUCNANGs"><EntityTypeMapping TypeName="QLVBModel.DMCHUCNANG"><MappingFragment StoreEntitySet="DMCHUCNANG">
+            <ScalarProperty Name="MACHUCNANG" ColumnName="MACHUCNANG" />
+            <ScalarProperty Name="TENCHUCNANG" ColumnName="TENCHUCNANG" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DMCOQUANs"><EntityTypeMapping TypeName="QLVBModel.DMCOQUAN"><MappingFragment StoreEntitySet="DMCOQUAN">
+            <ScalarProperty Name="MACOQUAN" ColumnName="MACOQUAN" />
+            <ScalarProperty Name="TENCOQUAN" ColumnName="TENCOQUAN" />
+            <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+            <ScalarProperty Name="WEBSERVICEURL" ColumnName="WEBSERVICEURL" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DMPHONGBANs"><EntityTypeMapping TypeName="QLVBModel.DMPHONGBAN"><MappingFragment StoreEntitySet="DMPHONGBAN">
+            <ScalarProperty Name="MAPHONG" ColumnName="MAPHONG" />
+            <ScalarProperty Name="IDUYQUYEN" ColumnName="IDUYQUYEN" />
+            <ScalarProperty Name="TENPHONG" ColumnName="TENPHONG" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="THAMSOes"><EntityTypeMapping TypeName="QLVBModel.THAMSO"><MappingFragment StoreEntitySet="THAMSO">
+            <ScalarProperty Name="NAME" ColumnName="NAME" />
+            <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetNewSeqVal" FunctionName="QLVBModel.Store.GetNewSeqVal" />
+          <EntitySetMapping Name="DMNHANVIENs">
+            <EntityTypeMapping TypeName="QLVBModel.DMNHANVIEN">
+              <MappingFragment StoreEntitySet="DMNHANVIEN">
+                <ScalarProperty Name="MAPHONG" ColumnName="MAPHONG" />
+                <ScalarProperty Name="ADMIN" ColumnName="ADMIN" />
+                <ScalarProperty Name="OFFICEPHONE" ColumnName="OFFICEPHONE" />
+                <ScalarProperty Name="CHUCVU" ColumnName="CHUCVU" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="NICKYAHOO" ColumnName="NICKYAHOO" />
+                <ScalarProperty Name="NICKSKYPE" ColumnName="NICKSKYPE" />
+                <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DMCHUCVUs">
+            <EntityTypeMapping TypeName="QLVBModel.DMCHUCVU">
+              <MappingFragment StoreEntitySet="DMCHUCVU">
+                <ScalarProperty Name="MACHUCNANG" ColumnName="MACHUCNANG" />
+                <ScalarProperty Name="TENCHUCVU" ColumnName="TENCHUCVU" />
+                <ScalarProperty Name="MACHUCVU" ColumnName="MACHUCVU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DMLOAIVBs">
+            <EntityTypeMapping TypeName="QLVBModel.DMLOAIVB">
+              <MappingFragment StoreEntitySet="DMLOAIVB">
+                <ScalarProperty Name="LOAIVB" ColumnName="LOAIVB" />
+                <ScalarProperty Name="IDLOAIVB" ColumnName="IDLOAIVB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DMSOVBs">
+            <EntityTypeMapping TypeName="QLVBModel.DMSOVB">
+              <MappingFragment StoreEntitySet="DMSOVB">
+                <ScalarProperty Name="TENSOVB" ColumnName="TENSOVB" />
+                <ScalarProperty Name="IDSOVB" ColumnName="IDSOVB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEN_DINHKEM">
+            <EntityTypeMapping TypeName="QLVBModel.DEN_DINHKEM">
+              <MappingFragment StoreEntitySet="DEN_DINHKEM">
+                <ScalarProperty Name="IDFILETRANSFER" ColumnName="IDFILETRANSFER" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="FILENAME" ColumnName="FILENAME" />
+                <ScalarProperty Name="IDVB" ColumnName="IDVB" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEN_DOITUONGNHANVIEC">
+            <EntityTypeMapping TypeName="QLVBModel.DEN_DOITUONGNHANVIEC">
+              <MappingFragment StoreEntitySet="DEN_DOITUONGNHANVIEC">
+                <ScalarProperty Name="THOIGIAN" ColumnName="THOIGIAN" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="TRACHNHIEM" ColumnName="TRACHNHIEM" />
+                <ScalarProperty Name="IDNGUOINHANVIEC" ColumnName="IDNGUOINHANVIEC" />
+                <ScalarProperty Name="IDXULY" ColumnName="IDXULY" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEN_VANBAN">
+            <EntityTypeMapping TypeName="QLVBModel.DEN_VANBAN">
+              <MappingFragment StoreEntitySet="DEN_VANBAN">
+                <ScalarProperty Name="IDXEM" ColumnName="IDXEM" />
+                <ScalarProperty Name="RECVSTATUS" ColumnName="RECVSTATUS" />
+                <ScalarProperty Name="IDNGUOINHAP" ColumnName="IDNGUOINHAP" />
+                <ScalarProperty Name="IDVBTRANSFER" ColumnName="IDVBTRANSFER" />
+                <ScalarProperty Name="CANXULY" ColumnName="CANXULY" />
+                <ScalarProperty Name="CHUCVUNGUOIKY" ColumnName="CHUCVUNGUOIKY" />
+                <ScalarProperty Name="NGUOIKY" ColumnName="NGUOIKY" />
+                <ScalarProperty Name="THOIHAN" ColumnName="THOIHAN" />
+                <ScalarProperty Name="SOTO" ColumnName="SOTO" />
+                <ScalarProperty Name="DOKHAN" ColumnName="DOKHAN" />
+                <ScalarProperty Name="DOMAT" ColumnName="DOMAT" />
+                <ScalarProperty Name="MAHOSO" ColumnName="MAHOSO" />
+                <ScalarProperty Name="TRICHYEU" ColumnName="TRICHYEU" />
+                <ScalarProperty Name="LOAIVANBAN" ColumnName="LOAIVANBAN" />
+                <ScalarProperty Name="NGAYVANBAN" ColumnName="NGAYVANBAN" />
+                <ScalarProperty Name="KYHIEU" ColumnName="KYHIEU" />
+                <ScalarProperty Name="NGAYDEN" ColumnName="NGAYDEN" />
+                <ScalarProperty Name="SODEN" ColumnName="SODEN" />
+                <ScalarProperty Name="TENSOVB" ColumnName="TENSOVB" />
+                <ScalarProperty Name="NOIGUI" ColumnName="NOIGUI" />
+                <ScalarProperty Name="IDVB" ColumnName="IDVB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEN_XULYVB">
+            <EntityTypeMapping TypeName="QLVBModel.DEN_XULYVB">
+              <MappingFragment StoreEntitySet="DEN_XULYVB">
+                <ScalarProperty Name="THOIHAN" ColumnName="THOIHAN" />
+                <ScalarProperty Name="THOIGIAN" ColumnName="THOIGIAN" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="CACHTHUC" ColumnName="CACHTHUC" />
+                <ScalarProperty Name="IDNGUOIXL" ColumnName="IDNGUOIXL" />
+                <ScalarProperty Name="IDVB" ColumnName="IDVB" />
+                <ScalarProperty Name="IDXULY" ColumnName="IDXULY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetCurSeqVal" FunctionName="QLVBModel.Store.GetCurSeqVal" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="HethongModel">
+        <EntityTypeShape EntityType="QLVBModel.DMCHUCNANG" Width="1.5" PointX="0.75" PointY="0.75" Height="1.2636116536458335" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLVBModel.DMCOQUAN" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLVBModel.DMPHONGBAN" Width="1.5" PointX="0.75" PointY="3.75" Height="1.4279589843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLVBModel.THAMSO" Width="1.5" PointX="2.75" PointY="3.75" Height="1.2636116536458317" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLVBModel.DMNHANVIEN" Width="1.5" PointX="5.375" PointY="2.75" Height="3.4001269531249996" />
+        <AssociationConnector Association="QLVBModel.FK_DMNHANVIEN_DMPHONGBAN" >
+          <ConnectorPoint PointX="2.25" PointY="5.209208984375" />
+          <ConnectorPoint PointX="5.375" PointY="5.209208984375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="QLVBModel.DMCHUCVU" Width="1.5" PointX="5.125" PointY="0.75" Height="1.5923063151041674" />
+        <AssociationConnector Association="QLVBModel.FK_DMCHUCVU_DMCHUCNANG" >
+          <ConnectorPoint PointX="2.25" PointY="0.75" />
+          <ConnectorPoint PointX="2.625" PointY="0.375" />
+          <ConnectorPoint PointX="4.7511528461538459" PointY="0.375" />
+          <ConnectorPoint PointX="5.1261528461538459" PointY="0.75" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="QLVBModel.DMLOAIVB" Width="1.5" PointX="0.75" PointY="6.75" Height="1.2636116536458388" />
+        <EntityTypeShape EntityType="QLVBModel.DMSOVB" Width="1.5" PointX="2.75" PointY="6.75" Height="1.2636116536458388" />
+        <EntityTypeShape EntityType="QLVBModel.DEN_DINHKEM" Width="1.5" PointX="9.625" PointY="1.125" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="QLVBModel.DEN_DOITUONGNHANVIEC" Width="1.5" PointX="11.875" PointY="4.125" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="QLVBModel.DEN_VANBAN" Width="1.5" PointX="7.375" PointY="1.375" Height="4.7149055989583388" />
+        <EntityTypeShape EntityType="QLVBModel.DEN_XULYVB" Width="1.5" PointX="9.625" PointY="3.875" Height="2.414042968749996" />
+        <AssociationConnector Association="QLVBModel.FK_DEN_DINHKEM_DEN_VANBAN" >
+          <ConnectorPoint PointX="8.875" PointY="2.2926741536458337" />
+          <ConnectorPoint PointX="9.625" PointY="2.2926741536458337" />
+        </AssociationConnector>
+        <AssociationConnector Association="QLVBModel.FK_DEN_DOITUONGNHANVIEC_DEN_XULYVB" >
+          <ConnectorPoint PointX="11.125" PointY="5.1676741536458337" />
+          <ConnectorPoint PointX="11.875" PointY="5.1676741536458337" />
+        </AssociationConnector>
+        <AssociationConnector Association="QLVBModel.FK_DEN_XULYVB_DEN_VANBAN" >
+          <ConnectorPoint PointX="8.875" PointY="4.9824527994791694" />
+          <ConnectorPoint PointX="9.625" PointY="4.9824527994791694" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

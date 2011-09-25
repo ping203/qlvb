@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[THAMSO] (
+    [NAME]  NVARCHAR (50)  NOT NULL,
+    [VALUE] NVARCHAR (255) NOT NULL
+);
+

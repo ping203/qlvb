@@ -1,0 +1,8 @@
+E:\Projects\QLVB\Database\Database\sql\debug\Database_Script.PreDeployment.sql
+E:\Projects\QLVB\Database\Database\sql\debug\Database_Script.PostDeployment.sql
+E:\Projects\QLVB\Database\Database\sql\debug\Database_Database.sqlsettings
+E:\Projects\QLVB\Database\Database\sql\debug\Database_Database.sqldeployment
+E:\Projects\QLVB\Database\Database\sql\debug\Database_Database.sqlcmdvars
+E:\Projects\QLVB\Database\Database\sql\debug\Database.deploymanifest
+E:\Projects\QLVB\Database\Database\sql\debug\Database.dbschema
+E:\Projects\QLVB\Database\Database\obj\Debug\Database.dbschema

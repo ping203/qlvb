@@ -1,0 +1,11 @@
+E:\Temp\extnet-mvc\Ext.Net.MVC\obj\Debug\ResolveAssemblyReference.cache
+E:\Temp\extnet-mvc\Ext.Net.MVC\bin\Debug\Ext.Net.MVC.dll
+E:\Temp\extnet-mvc\Ext.Net.MVC\bin\Debug\Ext.Net.MVC.pdb
+E:\Temp\extnet-mvc\Ext.Net.MVC\bin\Debug\Ext.Net.dll
+E:\Temp\extnet-mvc\Ext.Net.MVC\bin\Debug\Ext.Net.Utilities.dll
+E:\Temp\extnet-mvc\Ext.Net.MVC\bin\Debug\Newtonsoft.Json.dll
+E:\Temp\extnet-mvc\Ext.Net.MVC\bin\Debug\Ext.Net.xml
+E:\Temp\extnet-mvc\Ext.Net.MVC\bin\Debug\Ext.Net.Utilities.xml
+E:\Temp\extnet-mvc\Ext.Net.MVC\bin\Debug\Newtonsoft.Json.xml
+E:\Temp\extnet-mvc\Ext.Net.MVC\obj\Debug\Ext.Net.MVC.dll
+E:\Temp\extnet-mvc\Ext.Net.MVC\obj\Debug\Ext.Net.MVC.pdb
