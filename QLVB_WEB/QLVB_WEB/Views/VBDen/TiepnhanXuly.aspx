@@ -281,11 +281,11 @@
                     <ext:Column ColumnID="NGAYDEN" Header="Ngày đến" DataIndex="NGAYDEN" Width="100" Sortable="true" Align="Center">
                         <Renderer Handler="return Ext.util.Format.date(value, 'd/m/Y');" />
                     </ext:Column>
-                    <ext:Column ColumnID="SODEN" Header="Số đến" DataIndex="SODEN" Width="70" Sortable="true" Align="Center"/>
-                    <ext:Column ColumnID="NOIGUI" Header="Nơi gửi" DataIndex="NOIGUI" Width="250" Sortable="true" Align="Center"/>
-                    <ext:Column ColumnID="KYHIEU" Header="Ký hiệu" DataIndex="KYHIEU" Width="110" Sortable="true" Align="Center"/>
-                    <ext:Column ColumnID="TRICHYEU" Header="Trích yếu" DataIndex="TRICHYEU" Sortable="true" Align="Center"/>
-                    <ext:Column ColumnID="THOIHAN" Header="Hạn giải quyết" DataIndex="THOIHAN" Width="100" Sortable="true" Align="Center">
+                    <ext:Column ColumnID="SODEN" Header="Số đến" DataIndex="SODEN" Width="50" Sortable="true" Align="Left"/>
+                    <ext:Column ColumnID="NOIGUI" Header="Nơi gửi" DataIndex="NOIGUI" Width="250" Sortable="true" Align="Left"/>
+                    <ext:Column ColumnID="KYHIEU" Header="Ký hiệu" DataIndex="KYHIEU" Width="110" Sortable="true" Align="Left"/>
+                    <ext:Column ColumnID="TRICHYEU" Header="Trích yếu" DataIndex="TRICHYEU" Sortable="true" Align="Left"/>
+                    <ext:Column ColumnID="THOIHAN" Header="Hạn giải quyết" DataIndex="THOIHAN" Width="110" Sortable="true" Align="Right">
                         <Renderer Handler="return Ext.util.Format.date(value, 'd/m/Y');" />
                     </ext:Column>
                     <ext:Column ColumnID="STATE" Header="test" DataIndex="STATE" Width="20" Sortable="true" Align="Center"/>

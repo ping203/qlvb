@@ -136,7 +136,7 @@
                 runat="server" 
                 Title="Explorer" 
                 Region="West" 
-                Width="225" 
+                Width="175" 
                 CollapseMode="Mini" 
                 Split="true"
                 Stateful="true"
